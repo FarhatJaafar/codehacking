@@ -51,14 +51,14 @@
 
                     <div class="sb-sidenav-menu-heading">Web</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Users
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseUsers" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">All Users</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Create User</a>
+                            <a class="nav-link" href="{{route('users.index')}}">All Users</a>
+                            <a class="nav-link" href="{{route('users.create')}}">Create User</a>
                         </nav>
                     </div>
 
@@ -98,6 +98,7 @@
                             <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
                         </nav>
                     </div>
+
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                         Pages
@@ -140,31 +141,31 @@
                     </a>
                 </div>
             </div>
-            <div class="sb-sidenav-footer">
-                <div class="small">Logged in as:</div>
-                Start Bootstrap
-            </div>
+{{--            <div class="sb-sidenav-footer">--}}
+{{--                <div class="small">Logged in as:</div>--}}
+{{--                Start Bootstrap--}}
+{{--            </div>--}}
         </nav>
     </div>
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Admin</h1>
-
+{{--                <h1 class="mt-4">Admin</h1>--}}
+                @yield('content')
             </div>
         </main>
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid px-4">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+{{--        <footer class="py-4 bg-light mt-auto">--}}
+{{--            <div class="container-fluid px-4">--}}
+{{--                <div class="d-flex align-items-center justify-content-between small">--}}
+{{--                    <div class="text-muted">Copyright &copy; Your Website 2021</div>--}}
+{{--                    <div>--}}
+{{--                        <a href="#">Privacy Policy</a>--}}
+{{--                        &middot;--}}
+{{--                        <a href="#">Terms &amp; Conditions</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </footer>--}}
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
