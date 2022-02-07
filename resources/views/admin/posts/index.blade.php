@@ -25,10 +25,10 @@
             <tr>
                 <th scope="row">{{$post->id}}</th>
                 <td><img height="50px" src="{{$post->photo ? $post->photo->file : 'http://placehold.it/400x400' }}" alt=""></td>
-                <td>{{$post->user->name}}</td>
+                <td><a href="{{route('posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
                 <td>{{$post->category ? $post->category->name : 'not categorised' }}</td>
                 <td>{{$post->title}}</td>
-                <td>{{$post->body}}</td>
+                <td>{{str_limit($post->body, 12)}}</td>
                 <td>{{$post->created_at->diffForhumans()}}</td>
                 <td>{{$post->updated_at->diffForhumans()}}</td>
             </tr>

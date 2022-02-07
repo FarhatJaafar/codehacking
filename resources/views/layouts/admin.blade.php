@@ -89,8 +89,8 @@
                     </a>
                     <div class="collapse" id="collapseCategories" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">All Categories</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Create Category</a>
+                            <a class="nav-link" href="{{route('categories.index')}}">All Categories</a>
+                            <a class="nav-link" href="{{route('categories.create')}}">Create Category</a>
                         </nav>
                     </div>
 
