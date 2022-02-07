@@ -1,0 +1,29 @@
+[33mcommit e3d3474853001f86e349074ec902f3262d2056a0[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: FarhatJaafar <Ja3farfarhat1996@gmail.com>
+Date:   Mon Feb 7 09:57:45 2022 +0200
+
+    able to create static category
+
+[33mcommit 34013bdeda2f4bbc96b07ca89d712326ece4b79a[m
+Author: FarhatJaafar <Ja3farfarhat1996@gmail.com>
+Date:   Sun Feb 6 12:57:05 2022 +0200
+
+    Users section working without security
+
+[33mcommit 62e15a6ed19425943ab504b5837cab726670204b[m
+Author: FarhatJaafar <Ja3farfarhat1996@gmail.com>
+Date:   Sun Feb 6 11:21:29 2022 +0200
+
+    Users Table works with photos
+
+[33mcommit b8ec4600e95e9f939a8dd472aaf42ff588885d72[m
+Author: FarhatJaafar <Ja3farfarhat1996@gmail.com>
+Date:   Sat Feb 5 13:59:40 2022 +0200
+
+    admin master page setup
+
+[33mcommit 47f93a4a8e60b46f6fe6c92807f25a79e5eb36cf[m
+Author: FarhatJaafar <Ja3farfarhat1996@gmail.com>
+Date:   Fri Feb 4 17:50:07 2022 +0200
+
+    my first coming - admin views created
