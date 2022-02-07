@@ -8,33 +8,30 @@
 
         <div class="col-sm-6">
 
-            {!! Form::model($category,['method'=>'POST', 'action'=>['App\Http\Controllers\AdminCategoriesController@update', $category->id]]) !!}
+            {!! Form::model($category,['method'=>'PATCH', 'action'=>['App\Http\Controllers\AdminCategoriesController@update', $category->id]]) !!}
             <div class="form-group">
                 {!! Form::label('name', 'Category:') !!}
                 {!! Form::text('name', null, ['class'=>'form-control']) !!}
             </div>
-            <div class="form-group"><br>
-                {!! Form::submit('Update Category', ['class'=>'btn btn-primary']) !!}
+
+            <div class="row" style="display:inline;">
+
+                <div class="form-group" style="float: left; width: 460px;"><br>
+                    {!! Form::submit('Update Category', ['class'=>'btn btn-primary col-sm-4']) !!}
+                </div>
+                {!! Form::close() !!}
+
+                {!! Form::open(['method'=>'DELETE', 'action'=>['App\Http\Controllers\AdminCategoriesController@destroy', $category->id]]) !!}
+
+                <div class="form-group">
+                    {!! Form::submit('Delete Category', ['class'=>'btn btn-danger']) !!}
+                </div>
+
+                {!! Form::close() !!}
+
             </div>
-            {!! Form::close() !!}
-
-        </div>
-
-        <div class="col-sm-6">
-
-            {!! Form::open(['method'=>'POST', 'action'=>'App\Http\Controllers\PostsController@store']) !!}
-                <div class="form-group">
-                    {!! Form::label('title', 'Title:') !!}
-                    {!! Form::text('title', null, ['class'=>'form-control']) !!}
-                </div>
-                <div class="form-group">
-                {!! Form::submit('Create Post', ['class'=>'btn btn-primary']) !!}
-                </div>
-            {!! Form::close() !!}
-
         </div>
 
     </div>
-
 
 @endsection
