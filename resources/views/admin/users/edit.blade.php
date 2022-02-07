@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h1>Edit User</h1>
+    <h1 class="text-center">Edit User</h1>
 
     <div class="row">
         <div class="col-sm-2">
@@ -42,14 +42,31 @@
                 {!! Form::password('password', ["class" => "form-control"]) !!}
             </div>
 
-            <div class="form-group">
+            <div style="display:inline;">
+
+                <div class="form-group" style="float: left; width: 220px">
+                    <br>
+                    {!! Form::submit('Update User', ['class'=>'btn btn-primary col-sm-12']) !!}
+                </div>
+                {!! Form::close() !!}
+
                 <br>
-                {!! Form::submit('Edit User', ['class'=>'btn btn-primary']) !!}
+                {!! Form::open(['method'=>'DELETE', 'action'=>['App\Http\Controllers\AdminUsersController@destroy', $user->id]]) !!}
+
+                <div class="form-group">
+                    {!! Form::submit('DELETE', ['class'=>'btn btn-danger float-end col-sm-3']) !!}
+                </div>
+
             </div>
+
             {!! Form::close() !!}
 
         </div>
+
     </div>
+
+
+
     <div class="row">
         @include('includes.form_error')
     </div>

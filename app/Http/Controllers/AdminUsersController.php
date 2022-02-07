@@ -9,6 +9,8 @@ use App\Models\Photo;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
@@ -50,7 +52,7 @@ class AdminUsersController extends Controller
             $input = $request->except('password');
         }else{
             $input = $request->all();
-            $input['password'] = bcrypt($request->password);
+            $input['password'] = Hash::make($request->password);
         }
 
         if ($file = $request->file('photo_id')){
@@ -109,7 +111,7 @@ class AdminUsersController extends Controller
             $input = $request->except('password');
         }else{
             $input = $request->all();
-            $input['password'] = bcrypt($request->password);
+            $input['password'] = Hash::make($request->password);
         }
 
         if ($file = $request->file('photo_id')){
@@ -118,7 +120,7 @@ class AdminUsersController extends Controller
             $photo = Photo::create(['file'=>$name]);
             $input['photo_id']= $photo->id;
         }
-        $input['password'] = bcrypt($request->password);
+//        $input['password'] = bcrypt($request->password);
         $user->update($input);
         return redirect('admin/users');
     }
@@ -132,5 +134,14 @@ class AdminUsersController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::findOrFail($id);
+
+        unlink(public_path() . $user->photo->file);
+
+        $user->delete();
+
+        Session::flash('deleted_user', 'The user has been deleted');
+
+        return redirect('admin/users');
     }
 }
