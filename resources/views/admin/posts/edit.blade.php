@@ -37,7 +37,7 @@
         <div class="row" style="display:inline;">
 
             <div class="form-group" style="float: left; width: 420px"><br>
-                {!! Form::submit('Create Post', ['class'=>'btn btn-primary col-sm-12']) !!}
+                {!! Form::submit('Update Post', ['class'=>'btn btn-primary col-sm-12']) !!}
             </div>
             {!! Form::close() !!}
 

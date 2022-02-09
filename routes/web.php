@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::get('/post/{id}',[App\Http\Controllers\AdminPostsController::class, 'post'])->name('post');
 
 Route::group(['middleware'=>'admin'], function (){
 
@@ -34,6 +34,19 @@ Route::group(['middleware'=>'admin'], function (){
     Route::resource('admin/posts', App\Http\Controllers\AdminPostsController::class);
 
     Route::resource('admin/categories', App\Http\Controllers\AdminCategoriesController::class);
+
+    Route::resource('admin/media', App\Http\Controllers\AdminMediasController::class);
+
+    Route::resource('admin/comments', App\Http\Controllers\PostCommentsController::class);
+
+    Route::resource('admin/comment/replies', App\Http\Controllers\CommentRepliesController::class);
+
+});
+
+Route::group(['middleware'=>'auth'], function (){
+
+    Route::post('comment/reply', [App\Http\Controllers\CommentRepliesController::class, 'createReply']);
+
 });
 
 

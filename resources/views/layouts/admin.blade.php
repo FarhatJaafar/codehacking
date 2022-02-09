@@ -10,6 +10,7 @@
     <title>Dashboard - SB Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="{{asset('css/admin.css')}}" rel="stylesheet" />
+    @yield('styles')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
@@ -59,7 +60,7 @@
 
                     <div class="sb-sidenav-menu-heading">Web</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
-                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-id-card" style='font-size:18px'></i></div>
                         Users
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
@@ -71,7 +72,7 @@
                     </div>
 
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePosts" aria-expanded="false" aria-controls="collapsePosts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-camera-retro fa-sm"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-camera-retro fa-sm" style='font-size:18px'></i></div>
                         Posts
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
@@ -79,36 +80,37 @@
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="{{route('posts.index')}}">All Posts</a>
                             <a class="nav-link" href="{{route('posts.create')}}">Create Post</a>
+                            <a class="nav-link" href="{{route('comments.index')}}">All Comments</a>
                         </nav>
                     </div>
 
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCategories" aria-expanded="false" aria-controls="collapseCategories">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-list-alt" style='font-size:18px'></i></div>
                         Categories
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseCategories" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="{{route('categories.index')}}">All Categories</a>
-                            <a class="nav-link" href="{{route('categories.create')}}">Create Category</a>
+{{--                            <a class="nav-link" href="{{route('categories.create')}}">Create Category</a>--}}
                         </nav>
                     </div>
 
 {{--                    <div class="sb-sidenav-menu-heading">Interface</div>--}}
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-image" style='font-size:18px'></i></div>
                         Media
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">All Media</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Upload Media</a>
+                            <a class="nav-link" href="{{route('media.index')}}">All Media</a>
+                            <a class="nav-link" href="{{route('media.create')}}">Upload Media</a>
                         </nav>
                     </div>
 
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                        <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-book-open" style='font-size:18px'></i></div>
                         Pages
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
@@ -176,6 +178,7 @@
 {{--        </footer>--}}
     </div>
 </div>
+@yield('scripts')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="{{asset('js/admin.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>

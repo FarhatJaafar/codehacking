@@ -14,6 +14,8 @@
                 <th scope="col">Category</th>
                 <th scope="col">Title</th>
                 <th scope="col">Body</th>
+                <th scope="col">Post</th>
+                <th scope="col">Comments</th>
                 <th scope="col">Created</th>
                 <th scope="col">Updated</th>
             </tr>
@@ -29,6 +31,8 @@
                 <td>{{$post->category ? $post->category->name : 'not categorised' }}</td>
                 <td>{{$post->title}}</td>
                 <td>{{str_limit($post->body, 12)}}</td>
+                <td><a href="{{route('post', $post->id)}}">{{$post->title}}</a></td>
+                <td><a href="{{route('comments.show', $post->id)}}">view comments</a></td>
                 <td>{{$post->created_at->diffForhumans()}}</td>
                 <td>{{$post->updated_at->diffForhumans()}}</td>
             </tr>

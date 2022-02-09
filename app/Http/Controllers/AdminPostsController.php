@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
+use App\Models\CommentReply;
 use App\Models\Photo;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -131,4 +133,17 @@ class AdminPostsController extends Controller
         $post->delete();
         return redirect('/admin/posts');
     }
+
+
+    public function post($id){
+
+        $post = Post::findOrFail($id);
+
+        $comments = $post->comments()->whereIsActive(1)->get();
+
+        return view('post', compact('post', 'comments'));
+
+    }
+
+
 }
